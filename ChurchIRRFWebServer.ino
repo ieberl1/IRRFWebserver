@@ -152,7 +152,7 @@ void setup(void) {
     // Vars only can be 0 when they are given as a string "0"
     if((if8_numRepeats != 0 || numRepeats == "0") && (ui16_address != 0 || address == "0") && (ui8_command != 0 || command == "0"))
     {
-      //IrSender.sendNEC(ui16_address, ui8_command, if8_numRepeats);
+      IrSender.sendNEC(ui16_address, ui8_command, if8_numRepeats);
       resp = "Called IrSender.sendNEC(" + address + ", " + command + ", " + numRepeats + ")";
       server.send(200, "text/plain", resp);
       //Serial.println(resp);
